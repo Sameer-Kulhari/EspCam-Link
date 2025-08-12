@@ -13,7 +13,7 @@ EspCamLink is a smart IoT dashboard application designed for managing ESP32-CAM 
   - **Exit Tab**: Confirm exit and return to the Menu Screen.
 
 ## Setup Instructions
-
+### Using flutter
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
@@ -31,6 +31,9 @@ EspCamLink is a smart IoT dashboard application designed for managing ESP32-CAM 
    ```bash
    flutter run
    ```
+### Using Apk 
+
+Dowload the app-release.apk and install it on any android phone to use it 
 
 ## Usage Guidelines
 
