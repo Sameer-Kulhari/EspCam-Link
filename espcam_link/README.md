@@ -1,16 +1,51 @@
-# espcam_link
+# 📱 ESPCam-Link Flutter App
 
-A new Flutter project.
+## Overview
+The Flutter app connects to the ESPCam-Link server running on a Raspberry Pi.  
+It allows users to:
+1. View a splash screen with fade animation
+2. Select a device from the menu
+3. Log in to the device
+4. View live sensor readings
+5. Control GPIO devices (LED)
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## App Structure
 
-A few resources to get you started if this is your first Flutter project:
+### Screens
+1. **SplashScreen**
+   - Displays logo with fade-in/out animation
+   - Navigates to `/menu`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **MenuScreen**
+   - Lists devices with IP & port
+   - Navigates to `/session_login` when a device is selected
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. **SessionLoginScreen**
+   - Prompts for username & password
+   - Sends POST request to `http://<ip>:<port>/login`
+   - On success → navigates to `/session`
+
+4. **SessionScreen**
+   - Displays temperature & humidity
+   - LED control buttons
+
+---
+
+## Navigation Routes
+```dart
+routes: {
+  '/': (context) => const SplashScreen(),
+  '/menu': (context) => const MenuScreen(),
+  '/session_login': (context) => const SessionLoginScreen(),
+  '/session': (context) => const SessionScreen(),
+}
+```
+## Notes
+
+- The app communicates with the server over HTTP — ensure devices are on the same network.
+
+- Update IP & port in MenuScreen when adding devices.
+
+- Default login: admin / 1234 (must match server configuration).
