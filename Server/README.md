@@ -1,4 +1,4 @@
-## Server Side (Flask + Raspberry Pi)
+# Server Side (Flask + Raspberry Pi)
 
 ### Overview
 The server runs on a Raspberry Pi using:
