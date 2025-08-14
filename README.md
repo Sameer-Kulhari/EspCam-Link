@@ -50,6 +50,3 @@ Dowload the app-release.apk and install it on any android phone to use it
 - `POST /led/off`: Turns the LED off.
 - `GET /sensor`: Returns current sensor data (temperature and humidity).
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
